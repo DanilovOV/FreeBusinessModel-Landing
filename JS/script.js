@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    $('.header__burger').click(function (event) {
+    $('.header__burger').click(function() {
         $('.header__burger,.header__menu').toggleClass('active');
     });
 
     // Фильтр изображений
-    $('.boost__swapItem').click(function (event) {
+    $('.boost__swapItem').click(function() {
         let i = $(this).data('filter');
         $('.boost__backImg').hide();
         $('.boost__backImg.f_' + i).show();
@@ -25,8 +25,7 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
 
         const scrollTarget = document.getElementById(href);
 
-        // Если есть фиксированный заголовок, задать доп. отступ, равный его высоте
-        // Если нет, то установить значение 0
+        // Высота фиксированного заголовка
         const topOffset = 0;
 
         const elementPosition = scrollTarget.getBoundingClientRect().top;
