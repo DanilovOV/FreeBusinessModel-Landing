@@ -1,23 +1,14 @@
-// $(document).ready(function () {
-//     // Фильтр изображений
-//     $('.boost__swapItem').click(function() {
-//         let i = $(this).data('filter');
-//         $('.boost__backImg').fadeOut(500);
-//         $('.boost__backImg.f_' + i).fadeIn(500);
-        
-//         $('.boost__swapItem').removeClass('active-swap');
-//         $(this).addClass('active-swap');
-//     })
-// })
-
-let swapButton = document.querySelectorAll('.boost__swapItem');
-swapButton.forEach(button => {
+let swapButtons = document.querySelectorAll('.boost__swapItem');
+swapButtons.forEach(button => {
     button.onclick = changeImg;
 });
 
-function changeImg() {
+function changeImg(e) {
+    document.querySelector('.active-swap').classList.remove('active-swap');
+    this.classList.add('active-swap');
     let imgNum = this.dataset.filter;
-    
+    document.querySelectorAll('.boost__backImg').forEach(img => img.style.display = 'none')
+    document.querySelectorAll('.boost__backImg')[imgNum].style.display = 'block';
 }
 
 document.querySelector('.header__burger').onclick = () => {
@@ -27,7 +18,7 @@ document.querySelector('.header__burger').onclick = () => {
 
 
 // Плавный скролл
-document.querySelectorAll('a[href^="#"').forEach(link => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
     link.addEventListener('click', function(e) {
         e.preventDefault();
