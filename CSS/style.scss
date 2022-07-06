@@ -230,6 +230,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
 .title {
     text-align: center;
 }
+
 .boost {
     height: 666px;
     background-color: #709dca;
@@ -329,7 +330,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
             @include av("height", 610, 250, 1);
         }
         @media (max-width: $md4) {
-            visibility: collapse;
+            display: none;
         }
     }
     // .boost__mainImg
@@ -337,21 +338,22 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
         @include av("width", 647, 324, 1);
         @include av("height", 344, 172, 1);
 
-        top: 385px;
         position: absolute;
+        top: 385px;
         z-index: 1;
 
         @media (max-width: $md2) {
             margin: 120px auto 0;
         }
     }
-    // .boost__back-img
+    // .boost__backImg
     &__backImg {
+        display: none;
+        
         @include av("width", 445, 223, 1);
         @include av("height", 264, 132, 1);
         @include av("top", 403, 395, 1);
-        
-        top: 403px;
+    
         position: absolute;
         z-index: 2;
 
@@ -362,13 +364,13 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
             margin: 120px auto 0;
         }
     }
-	// .boost__swap
-	&__swap {
+	// .boost__changeImg
+	&__changeImg {
         display: flex;
         margin: 0 auto;
 	}
-	// .boost__swapItem
-	&__swapItem {
+	// .boost__changeImgButton
+	&__changeImgButton {
         content: '';
         width: 16px;
         height: 15px;
@@ -380,8 +382,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
         }
 	}
 }
-
-.active-swap {
+.active-img {
+    display: block;
+}
+.active-button {
     border: 2px solid #1ca8dd;
 }
 

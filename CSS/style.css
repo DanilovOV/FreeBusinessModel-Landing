@@ -379,14 +379,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 479.98px) {
   .boost__imgBlock {
-    visibility: collapse;
+    display: none;
   }
 }
 .boost__mainImg {
   width: 647px;
   height: 344px;
-  top: 385px;
   position: absolute;
+  top: 385px;
   z-index: 1;
 }
 @media (max-width: 1160px) {
@@ -405,9 +405,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .boost__backImg {
+  display: none;
   width: 445px;
   height: 264px;
-  top: 403px;
   top: 403px;
   position: absolute;
   z-index: 2;
@@ -434,11 +434,11 @@ h1, h2, h3, h4, h5, h6 {
     margin: 120px auto 0;
   }
 }
-.boost__swap {
+.boost__changeImg {
   display: flex;
   margin: 0 auto;
 }
-.boost__swapItem {
+.boost__changeImgButton {
   content: "";
   width: 16px;
   height: 15px;
@@ -446,11 +446,15 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   margin: 0 3px;
 }
-.boost__swapItem:hover {
+.boost__changeImgButton:hover {
   border: 2px solid #1ca8dd;
 }
 
-.active-swap {
+.active-img {
+  display: block;
+}
+
+.active-button {
   border: 2px solid #1ca8dd;
 }
 

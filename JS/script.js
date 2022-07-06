@@ -1,14 +1,15 @@
-let swapButtons = document.querySelectorAll('.boost__swapItem');
+let swapButtons = document.querySelectorAll('.boost__changeImgButton');
 swapButtons.forEach(button => {
     button.onclick = changeImg;
 });
 
-function changeImg(e) {
-    document.querySelector('.active-swap').classList.remove('active-swap');
-    this.classList.add('active-swap');
-    let imgNum = this.dataset.filter;
-    document.querySelectorAll('.boost__backImg').forEach(img => img.style.display = 'none')
-    document.querySelectorAll('.boost__backImg')[imgNum].style.display = 'block';
+function changeImg() {
+    document.querySelector('.active-button').classList.remove('active-button');
+    this.classList.add('active-button');
+
+    let newActiveImgNum = this.dataset.filter;
+    document.querySelector('.active-img').classList.remove('active-img');
+    document.querySelectorAll('.boost__backImg')[newActiveImgNum].classList.add('active-img')
 }
 
 document.querySelector('.header__burger').onclick = () => {
