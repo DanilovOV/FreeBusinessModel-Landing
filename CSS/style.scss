@@ -86,16 +86,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
     top: 0;
     left: 0;
     z-index: 50;
-        &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        z-index: 2;
-    }
+    background-color: #fff;
     // .header__body
     &__body {
         position: relative;
@@ -103,7 +94,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
         justify-content: space-between;
         height: 80px;
         align-items: center;
-        z-index: 3;
         @media (max-width: $md3) {
             height: 50px;
         }
@@ -184,6 +174,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
             width: 100%;
             height: 100%;
             padding: 30px 10px 20px 10px;
+            
             transition: all 0.5s ease 0s;
             &.active {
                 top: 0;
@@ -194,7 +185,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
     &__list {
         display: flex;
         position: relative;
-        z-index: 2;
         margin: 42px 0;
         li {
             list-style: none;
@@ -349,7 +339,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
     // .boost__backImg
     &__backImg {
         display: none;
-        
         @include av("width", 445, 223, 1);
         @include av("height", 264, 132, 1);
         @include av("top", 403, 395, 1);
@@ -364,13 +353,14 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
             margin: 120px auto 0;
         }
     }
-	// .boost__changeImg
-	&__changeImg {
+	// .boost__paginationBlock
+	&__paginationBlock {
         display: flex;
         margin: 0 auto;
 	}
-	// .boost__changeImgButton
-	&__changeImgButton {
+	// .boost__paginationButton
+	&__paginationButton {
+        cursor: pointer;
         content: '';
         width: 16px;
         height: 15px;
@@ -378,14 +368,14 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit;}
         border-radius: 50%;
         margin: 0 3px;
         &:hover {
-            border: 2px solid #1ca8dd;
+            border: 2px solid #7fc5df;
         }
 	}
 }
 .active-img {
     display: block;
 }
-.active-button {
+.active-button, .active-button:hover {
     border: 2px solid #1ca8dd;
 }
 

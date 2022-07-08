@@ -1,7 +1,10 @@
-let swapButtons = document.querySelectorAll('.boost__changeImgButton');
-swapButtons.forEach(button => {
-    button.onclick = changeImg;
-});
+document.querySelector('.header__burger').onclick = () => {
+    document.querySelector('.header__burger').classList.toggle('active');
+    document.querySelector('.header__menu').classList.toggle('active');
+}
+
+let swapButtons = document.querySelectorAll('.boost__paginationButton');
+swapButtons.forEach(button => button.onclick = changeImg);
 
 function changeImg() {
     document.querySelector('.active-button').classList.remove('active-button');
@@ -11,12 +14,6 @@ function changeImg() {
     document.querySelector('.active-img').classList.remove('active-img');
     document.querySelectorAll('.boost__backImg')[newActiveImgNum].classList.add('active-img')
 }
-
-document.querySelector('.header__burger').onclick = () => {
-    document.querySelector('.header__burger').classList.toggle('active');
-    document.querySelector('.header__menu').classList.toggle('active');
-}
-
 
 // Плавный скролл
 document.querySelectorAll('a[href^="#"]').forEach(link => {
